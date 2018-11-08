@@ -1,0 +1,16 @@
+<form  [formGroup]="form">
+  <div>
+    Nama Jabatan
+    <input type="text"
+           formControlName="namaJabatan" />
+  </div>
+  <div>
+    Deskripsi Jabatan
+    <input type="text"
+           formControlName="deskripsiJabatan" />
+  </div>
+  <div>
+    <button [disabled]="!form.valid" (click)="saveData()">SAVE</button>
+  </div>
+
+</form>

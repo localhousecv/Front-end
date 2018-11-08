@@ -1,0 +1,247 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-box">
+      <h4 class="m-t-0 header-title"><b>Form Tambah Data Pegawai Sekolah</b>
+      </h4>
+      <!--<p class="text-muted m-b-30 font-13">Mohon input data berita setelah datanya telah di validasi.</p>-->
+      <div class="row">
+        <div class="col-md-12">
+
+          <form [formGroup]="form" class="form-horizontal" role="form">
+
+            <input type="hidden" formControlName="uuid"/>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Nama Pegawai*</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="namaPegawai"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">NIP Pegawai</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="nipPegawai"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Tanggal Lahir</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="tanggalLahir" placeholder="dd/mm/yyyy"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Tempat Lahir</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="tempatLahir"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Alamat</label>
+              <div class="col-sm-10">
+                <textarea formControlName="alamatPegawai"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">No HP Pegawai</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="hpPegawai"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Email Pegawai</label>
+              <div class="col-sm-10">
+                <input type="email" class="col-xs-10 col-sm-5" formControlName="emailPegawai"/>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Jenis Kelamin</label>
+              <div class="control-group">
+                <div class="radio">
+                  <label>
+                    <input formControlName="jenisKelamin" type="radio" class="ace" value="L"/>
+                    <span class="lbl"> Laki-Laki</span>
+                  </label>
+                  <label>
+                    <input formControlName="jenisKelamin" type="radio" class="ace" value="P" />
+                    <span class="lbl"> Perempuan</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Agama</label>
+              <div class="col-sm-10">
+                <select formControlName="agama">
+                  <option value="Islam">Islam</option>
+                  <option value="Kristen">Kristen</option>
+                  <option value="Hindu">Hindu</option>
+                  <option value="Budha">Budha</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Tanggal Masuk</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="tanggalMasuk" placeholder="dd/mm/yyyy"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Tanggal Keluar</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="tanggalKeluar" placeholder="dd/mm/yyyy"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Jabatan</label>
+              <div class="col-sm-10" formGroupName="uuidJabatan">
+                <select formControlName="uuid">
+                  <option *ngFor="let d of dataJabatan;"
+                          [value]="d.uuid">
+                    {{d.namaJabatan}}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Foto Pegawai</label>
+              <div class="col-sm-10">
+                <input type="file" class="col-xs-10 col-sm-5"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Status</label>
+              <div class="control-group">
+                <div class="radio">
+                  <label>
+                    <input type="radio" class="ace" value="true"/>
+                    <span class="lbl"> Aktif</span>
+                  </label>
+                  <label>
+                    <input type="radio" class="ace" value="false" />
+                    <span class="lbl"> Non Aktif</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right"></label>
+              <div class="col-sm-10">
+                <button (click)="save(form.value)"
+                        class="btn btn-default waves-effect waves-light btn-md">Submit
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+        </div> <!-- end col-md-12 -->
+      </div> <!-- end row -->
+      <p>Keterangan : </p>
+      <small class="req-sign">*</small>
+      Harus di Isi
+    </div><!-- end card-box -->
+  </div><!-- end col-sm-12 -->
+</div><!-- end row -->
+
+
+<div class="row">
+  <div class="col-xs-12">
+
+    <div class="clearfix">
+      <div class="pull-right tableTools-container"></div>
+    </div>
+    <div class="table-header">
+      Data Guru
+    </div>
+
+    <!-- div.table-responsive -->
+
+    <!-- div.dataTables_borderWrap -->
+    <div>
+      <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+          <th class="center">
+            <label class="pos-rel"><input type="checkbox" class="ace"/><span class="lbl"></span></label>
+          </th>
+          <th>NIP</th>
+          <th>Nama Guru</th>
+          <th>Jabatan</th>
+          <th>No. HP</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let d of dataPegawai;">
+          <td class="center">
+            <label class="pos-rel">
+              <input type="checkbox" class="ace"/>
+              <span class="lbl"></span>
+            </label>
+          </td>
+
+          <td>{{d.nipPegawai}}</td>
+          <td>{{d.namaPegawai}}</td>
+          <td>{{d.hpPegawai}}</td>
+          <td>{{d.uuidJabatan.namaJabatan}}</td>
+          <td class="hidden-480"><span class="label label-sm label-warning">Aktif</span></td>
+
+          <td>
+            <div class="hidden-sm hidden-xs action-buttons">
+              <a class="green" href="#">
+                <i class="ace-icon fa fa-pencil bigger-130"></i>
+              </a>
+              <a class="red" href="#">
+                <i class="ace-icon fa fa-trash-o bigger-130"></i>
+              </a>
+            </div>
+
+            <div class="hidden-md hidden-lg">
+              <div class="inline pos-rel">
+                <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                  <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                  <li>
+                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+                      <span class="green">
+                        <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                      <span class="red">
+                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

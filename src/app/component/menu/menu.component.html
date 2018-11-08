@@ -1,0 +1,62 @@
+<!-- <div class="sidebar">
+    <ul class="widget widget-menu unstyled">
+        <li *ngFor="let menu of menuUtama">
+        	<a *ngIf="menu.sub_menu; else gg" class="collapsed" data-toggle="collapse" href="#{{menu.nama_menu}}">
+        		<i class="menu-icon {{menu.icon}}"></i>
+        		<i class="icon-chevron-down pull-right"></i>
+        		<i class="icon-chevron-up pull-right"></i>
+        	{{menu.nama_menu}}</a>
+    		<ng-template #gg>
+    			<a routerLink="/{{menu.link}}"> <i class="menu-icon {{menu.icon}}"></i> {{menu.nama_menu}}</a>
+    		</ng-template>
+            
+            <ul *ngIf="menu.sub_menu" id="{{menu.nama_menu}}" class="collapse unstyled">
+                <li *ngFor="let submenu of menu.sub_menu" (click)="onSelect(submenu.link)">
+                	<a routerLink="/{{submenu.link}}">{{submenu.nama_sub}}</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#"><i class="menu-icon {{menu.icon}}"></i>Logout </a></li>
+    </ul>
+</div> -->
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<h3><b>Selamat Bekerja</b></h3>
+					<!-- <img src="assets/images/avatars/user.jpg" width="70%"><br> -->
+					<b>Nama Guru</b>
+				</div><!-- /.sidebar-shortcuts -->
+
+
+
+				<ul class="nav nav-list">
+
+					<li *ngFor="let menu of menuUtama" class="">
+						<a *ngIf="menu.sub_menu; else gg" href="#" class="dropdown-toggle">
+							<i class="menu-icon {{menu.icon}}"></i>
+							<span class="menu-text"> {{menu.nama_menu}} </span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<ng-template #gg>
+							<a routerLink="/{{menu.link}}">
+								<i class="menu-icon {{menu.icon}}"></i>
+								<span class="menu-text"> {{menu.nama_menu}} </span>
+							</a>
+						</ng-template>
+
+						<b class="arrow"></b>
+
+						<ul *ngIf="menu.sub_menu" class="submenu">
+							<li *ngFor="let submenu of menu.sub_menu" (click)="onSelect(submenu.link)" [class.active]="submenu.link === selectedMenu">
+                				<a routerLink="/{{submenu.link}}">{{submenu.nama_sub}}</a>
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+
+								
+				</ul><!-- /.nav-list -->
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>

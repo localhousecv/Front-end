@@ -1,0 +1,188 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-box">
+      <h4 class="m-t-0 header-title"><b>Form Tambah Data Siswa</b></h4>
+      <!--<p class="text-muted m-b-30 font-13">Mohon input data berita setelah datanya telah di validasi.</p>-->
+      <div class="row">
+        <div class="col-md-12">
+
+          <form [formGroup]="form" class="form-horizontal" role="form">
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Nomor Induk Siswa</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="nomorInduk"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Nama Siswa</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="namaSiswa"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Tanggal Lahir</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="tanggalLahir" placeholder="dd/mm/yyyy"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Tempat Lahir</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="tempatLahir"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Status dikeluarga</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="statusDiKeluarga"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Alamat Siswa</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="alamatSiswa"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Anak Ke</label>
+              <div class="col-sm-10">
+                <input type="number" [maxlength]="2" class="col-xs-10 col-sm-5" formControlName="anakKe"/>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">Agama</label>
+              <div class="col-sm-10">
+                <select formControlName="agama">
+                  <option value="Islam">Islam</option>
+                  <option value="Kristen">Kristen</option>
+                  <option value="Hindu">Hindu</option>
+                  <option value="Budha">Budha</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Sekolah Asal</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="asalSekolah"/>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">Diterima di Kelas</label>
+              <div class="col-sm-10" formGroupName="diterimaDikelas">
+                <select formControlName="uuid">
+                  <option *ngFor="let d of dataTingkatan;"
+                          [value]="d.uuid" >
+                    {{d.tingkatan}}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Diterima pada Tanggal</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="diterimaPadaTanggal" placeholder="dd/mm/yyyy"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Jenis Kelamin</label>
+              <div class="control-group">
+                <div class="radio">
+                  <label>
+                    <input formControlName="jenisKelamin" name="form-field-radio" type="radio" class="ace" value="L"/>
+                    <span class="lbl"> Laki-Laki</span>
+                  </label>
+                  <label>
+                    <input formControlName="jenisKelamin" name="form-field-radio" type="radio" class="ace" value="P" />
+                    <span class="lbl"> Perempuan</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Nama Ayah</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="namaAyah"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Nama Ibu</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="namaIbu"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">No. Telp</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="nomorTelepon"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Pekerjaan ayah</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="pekerjaanAyah"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Pekerjaan Ibu</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="pekerjaanIbu"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Nama Wali</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="namaWali"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">No. Telp Wali</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="nomorTeleponWali"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right">Pekerjaan Wali</label>
+              <div class="col-sm-10">
+                <input type="text" class="col-xs-10 col-sm-5" formControlName="pekerjaanWali"/>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label no-padding-right"></label>
+              <div class="col-sm-10">
+                <button [disabled]="!form.valid" (click)="saveData()"
+                        class="btn btn-default waves-effect waves-light btn-md">Submit
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+        </div> <!-- end col-md-12 -->
+      </div> <!-- end row -->
+    </div><!-- end card-box -->
+  </div><!-- end col-sm-12 -->
+</div><!-- end row -->
