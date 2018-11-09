@@ -29,7 +29,7 @@ export class MenuComponent implements OnInit {
     },
     {
       id_menu: '3',
-      nama_menu: 'Data',
+      nama_menu: 'Master',
       link: '',
       icon: 'fa fa-tasks',
       sub_menu:
@@ -52,7 +52,15 @@ export class MenuComponent implements OnInit {
       sub_menu:
         [
           {nama_sub: 'Kelas', link: 'pengaturan/kelas'},
-          {nama_sub: 'Kurikulum', link: 'pengaturan/kurikulum'}
+          {nama_sub: 'Kurikulum', link: 'pengaturan/kurikulum'},
+          {nama_sub: 'Keterampilan Umum', link: 'pengaturan/keterampilan-umum'},
+          {nama_sub: 'Sikap Khusus', link: 'pengaturan/sikap-khusus'},
+          {nama_sub: 'Kelas Perwalian', link: 'pengaturan/kelas-perwalian'},
+          {nama_sub: 'Predikat Mata Pelajaran', link: 'pengaturan/predikat-mata-pelajaran'},
+          {nama_sub: 'Jenis Penilaian Kompetensi', link: 'pengaturan/jenis-penilaian-kompetensi'},
+          // {nama_sub: 'Penilaian Pengetahuan Jenis Kompetensi', link: 'pengaturan/penilaian-pengetahuan-jenis-kompetensi'}
+          {nama_sub: 'Mata Pelajaran kelas', link: 'pengaturan/mata-pelajaran-kelas'},
+          {nama_sub: 'Siswa Kelas', link: 'pengaturan/siswa-kelas'}
         ]
     }
   ];

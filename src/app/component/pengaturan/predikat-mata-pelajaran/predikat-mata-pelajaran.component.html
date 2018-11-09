@@ -1,0 +1,38 @@
+<form  [formGroup]="form" class="form-horizontal" role="form">
+
+  <input type="hidden" class="col-xs-10 col-sm-5" formControlName="uuid"/>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label no-padding-right">Batas Atas</label>
+    <div class="col-sm-10">
+      <input type="number" class="col-xs-10 col-sm-5" formControlName="batasAtas"/>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label no-padding-right">Batas Bawah</label>
+    <div class="col-sm-10">
+      <input type="number" class="col-xs-10 col-sm-5" formControlName="batasBawah"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label no-padding-right">Predikat</label>
+    <div class="col-sm-10">
+      <input type="text" class="col-xs-10 col-sm-5" formControlName="predikat"/>
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label no-padding-right"></label>
+    <div class="col-xs-10 col-sm-5">
+      <button [disabled]="!form.valid"  (click)="saveData()" class="btn btn-default waves-effect waves-light btn-md">SAVE</button>
+    </div>
+  </div>
+
+</form>
+
+
